@@ -15,7 +15,7 @@ import {
 import Select from "react-select";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { fetchTags } from "@/redux/tagsSlice";
+import { toast } from "react-toastify";
 import { updateTodo, fetchTodos } from "@/redux/todosSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -36,14 +36,11 @@ const EditModal = ({ modalState, toggleModal, todoId }) => {
     description: selectedTodo ? selectedTodo.description : "",
     is_completed: selectedTodo ? selectedTodo.is_completed : false,
     tags: selectedTodo
-      ? selectedTodo.tags.map((tag) => ({ value: tag, label: tag }))
+      ? tags.filter((tag) => selectedTodo.tags.includes(tag.value))
       : [],
+    created_at: selectedTodo ? selectedTodo.created_at : "",
+    updated_at: selectedTodo ? selectedTodo.updated_at : "",
   };
-
-  useEffect(() => {
-    dispatch(fetchTags());
-  }, [dispatch]);
-
   const validationSchema = Yup.object().shape({
     title: Yup.string().required("Title is required"),
     description: Yup.string(),
@@ -65,9 +62,10 @@ const EditModal = ({ modalState, toggleModal, todoId }) => {
       .then((res) => {
         console.log(res);
         dispatch(fetchTodos());
+        toast.success("Todo updated successfully");
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(`Something went wrong : ${err}`);
       });
   };
 
@@ -120,7 +118,9 @@ const EditModal = ({ modalState, toggleModal, todoId }) => {
             <Label for='tags'>Tags</Label>
             <Select
               isMulti
-              value={formik.values.tags}
+              value={formik.values.tags.map((tag) => ({
+                label: tag?.label,
+              }))}
               options={tags.map((tag) => ({
                 value: tag.value,
                 label: tag.label,
@@ -139,7 +139,7 @@ const EditModal = ({ modalState, toggleModal, todoId }) => {
                 checked={formik.values.is_completed}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-              />{" "}
+              />
               Completed
             </Label>
           </FormGroup>

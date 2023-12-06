@@ -14,16 +14,6 @@ export default function Navbar() {
     setModal(!modal);
   };
 
-  useEffect(() => {
-    dispatch(fetchTodos(searchTerm))
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [searchTerm]);
-
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };

@@ -50,6 +50,8 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
         return tag.value;
       }),
       is_completed: values.is_completed,
+      created_at: new Date(),
+      updated_at: new Date(),
     };
 
     dispatch(addTodo(todoData))

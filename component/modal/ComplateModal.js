@@ -13,7 +13,6 @@ function ComplateModal({
   const [backdrop, setBackdrop] = useState(true);
 
   useEffect(() => {
-    // Reset the backdrop state whenever the modal is opened
     setBackdrop(true);
   }, [modalState]);
 

@@ -1,43 +1,204 @@
 {
   "todos": [
     {
-      "title": "Deneme Title",
-      "description": "buu deneme için yapılmış bir şeydir\n",
-      "tags": [2],
-      "is_completed": false,
-      "id": 1
-    },
-    {
-      "title": "deneme 3 title",
-      "description": "deneme 3 title",
-      "tags": [2],
-      "is_completed": false,
-      "id": 3
-    },
-    {
-      "title": "denemeee title",
-      "description": "denemeee titledenemeee title\ndenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee title\ndenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee title\ndenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee titledenemeee title",
-      "tags": [2, 3, 4],
+      "id": 1,
+      "title": "Task 1",
+      "tags": [1],
+      "description": "Tüm kaynaklar GitHub üzerinde tutulacaktır.",
       "is_completed": true,
-      "id": 4
+      "created_at": "2023-12-06T08:15:00Z",
+      "updated_at": "2023-12-06T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Task 2",
+      "tags": [1],
+      "description": "Readme.md dosyasına uygulamanın çalıştırılması için gerekli tüm adımların yazılması gerekmektedir",
+      "is_completed": true,
+      "created_at": "2023-12-06T09:30:00Z",
+      "updated_at": "2023-12-06T11:45:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Task 3",
+      "tags": [1],
+      "description": "firebase.google.com, fakestoreapi.com, dummyapi.io veya https://github.com/typicode/json-server vb. sahte endpoint oluşturucu kullanılabilir.",
+      "is_completed": true,
+      "created_at": "2023-12-06T10:45:00Z",
+      "updated_at": "2023-12-06T13:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Task 4",
+      "tags": [1],
+      "description": "Todos objeleri oluşturulacak",
+      "is_completed": true,
+      "created_at": "2023-12-06T12:00:00Z",
+      "updated_at": "2023-12-06T14:15:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Task 5",
+      "tags": [1],
+      "description": "todos objesi içerisinde aşağıdaki alanlar olmalıdır. \n _id (ObjectId), title (String), description (String), is_completed (Boolean), created_at (Date), updated_at (Date)",
+      "is_completed": true,
+      "created_at": "2023-12-06T13:15:00Z",
+      "updated_at": "2023-12-06T15:30:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Task 6",
+      "tags": [1],
+      "description": "JSON / REST API ile endpoint'ler oluşturulacaktır",
+      "is_completed": true,
+      "created_at": "2023-12-06T14:30:00Z",
+      "updated_at": "2023-12-06T16:45:00Z"
+    },
+    {
+      "id": 7,
+      "title": "Task 7",
+      "tags": [1],
+      "description": "REST API üzerinde, GET methodu ile todos verileri çekilebilecek. (Front-End Gereksinimleri 7. madde için)",
+      "is_completed": true,
+      "created_at": "2023-12-06T15:45:00Z",
+      "updated_at": "2023-12-06T18:00:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Task 8",
+      "tags": [1],
+      "description": "REST API üzerinde, POST methodu ile todos koleksiyonuna veri eklenebilecek. (Front-End Gereksinimleri 8. madde için)",
+      "is_completed": true,
+      "created_at": "2023-12-06T17:00:00Z",
+      "updated_at": "2023-12-06T19:15:00Z"
+    },
+    {
+      "id": 9,
+      "title": "Task 9",
+      "tags": [1],
+      "description": "REST API üzerinde, DELETE methodu ile todos koleksiyonundan veri silinebilecek. (Front-End Gereksinimleri 9. madde için)",
+      "is_completed": true,
+      "created_at": "2023-12-06T18:15:00Z",
+      "updated_at": "2023-12-06T20:30:00Z"
+    },
+    {
+      "id": 10,
+      "title": "Task 10",
+      "tags": [1],
+      "description": "REST API üzerinde, PUT methodu ile todos koleksiyonunda veri güncellenebilecek. (Front-End Gereksinimleri 10. madde için)",
+      "is_completed": true,
+      "created_at": "2023-12-06T19:30:00Z",
+      "updated_at": "2023-12-06T21:45:00Z"
+    },
+    {
+      "id": 11,
+      "title": "Task 11",
+      "tags": [2],
+      "description": "Tüm kaynaklar GitHub üzerinde tutulacaktır.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 12,
+      "title": "Task 12",
+      "tags": [2],
+      "description": "Readme.md dosyasına uygulamanın çalıştırılması için gerekli tüm adımların yazılması gerekmektedir",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 13,
+      "title": "Task 13",
+      "tags": [2],
+      "description": "React.js son versiyon kullanılarak geliştirme yapılacaktır",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 14,
+      "title": "Task 14",
+      "tags": [2],
+      "description": "React.js içerisinde Javascript dili ile kodlama yapılacaktır (TypeScript kullanılmayacak)",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 15,
+      "title": "Task 15",
+      "tags": [2],
+      "description": "Ekteki resim baz alınarak bir arayüz tasarımı oluşturulacaktır.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 16,
+      "title": "Task 16",
+      "tags": [2],
+      "description": "Formlar için (Ekleme, Düzenleme vb formlar) 'Formik' kütüphanesi kullanılacaktır.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 17,
+      "title": "Task 17",
+      "tags": [2],
+      "description": "Yapılacaklar listesi olan bir listeleme sayfası olmalı.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 18,
+      "title": "Task 18",
+      "tags": [2],
+      "description": "Yeni 'Yapılacak' maddesi eklenebilecek bir arayüz olmalı.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 19,
+      "title": "Task 19",
+      "tags": [2],
+      "description": "Listeden bir 'Yapılacak' maddesi silinebilmeli.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 20,
+      "title": "Task 20",
+      "tags": [2],
+      "description": "Tamamlanan 'Yapılacak' maddesi, tamamlandı olarak güncellenmeli.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": 21,
+      "title": "Task 21",
+      "tags": [2],
+      "description": "Endpoint istekleri için 'Axios' kütüphanesi kullanılacaktır.",
+      "is_completed": false,
+      "created_at": null,
+      "updated_at": null
     }
   ],
+
   "tags": [
     {
       "value": 1,
-      "label": "Tag 1"
+      "label": "Api"
     },
     {
       "value": 2,
-      "label": "Tag 2"
-    },
-    {
-      "value": 3,
-      "label": "Tag 3"
-    },
-    {
-      "value": 4,
-      "label": "Tag 4"
+      "label": "Frontend"
     }
   ]
 }

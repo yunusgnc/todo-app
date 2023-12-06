@@ -13,6 +13,7 @@ import {
 import { FaCheckCircle, FaCircleNotch, FaEllipsisH } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTodos, updateTodo, deleteTodo } from "../../src/redux/todosSlice";
+import { toast } from "react-toastify";
 import DeleteModal from "../modal/DeleteModal";
 import ComplateModal from "../modal/ComplateModal";
 import EditModal from "../modal/EditModal";
@@ -24,41 +25,46 @@ const Card = () => {
   const todos = useSelector((state) => state.todos.data);
   const tags = useSelector((state) => state.tags.data);
   const [modalState, setModalState] = useState({
-    delete: false,
-    complete: false,
-    edit: false,
+    delete: null,
+    complete: null,
+    edit: null,
   });
 
   const toggleModal = (modalName, todoId) => {
     setTodoId(todoId);
     setModalState((prevState) => ({
       ...prevState,
-      [modalName]: !prevState[modalName],
+      [modalName]: prevState[modalName] === todoId ? null : todoId,
     }));
   };
 
   const handleDelete = () => {
-    dispatch(deleteTodo(todoId)).then((res) => {
-      setModalState((prevState) => ({
-        ...prevState,
-        delete: !prevState.delete,
-      }));
-      dispatch(fetchTodos());
-    });
+    dispatch(deleteTodo(todoId))
+      .then((res) => {
+        setModalState((prevState) => ({
+          ...prevState,
+          delete: null,
+        }));
+        toast.success("Todo deleted successfully");
+        dispatch(fetchTodos());
+      })
+      .catch((err) => {
+        toast.error("Something went wrong");
+      });
   };
 
   const handleComplete = () => {
-    // updateTodo bir Promise döndürdüğü için .then() zinciri kullanıyoruz
     dispatch(updateTodo({ _id: todoId, is_completed: true }))
       .then((res) => {
         setModalState((prevState) => ({
           ...prevState,
-          complete: !prevState.complete,
+          complete: null,
         }));
+        toast.success("Todo completed successfully");
         dispatch(fetchTodos());
       })
       .catch((err) => {
-        console.error(err);
+        toast.error("Something went wrong");
       });
   };
 
@@ -89,15 +95,25 @@ const Card = () => {
                 )}
               </div>
               <div className='col-8'>
-                <CardBody>
+                <CardBody
+                  style={{
+                    minHeight: "300px",
+                    maxHeight: "300px",
+                  }}>
                   <CardTitle className='text-black texet-center' tag='h2'>
                     {todo?.title?.slice(0, 30)}
                     {todo?.title?.length > 20 && "..."}
                   </CardTitle>
                   <div className='col-12'>
-                    <CardText tag={"p"}>
-                      {todo?.description?.slice(0, 150)}{" "}
-                      {todo?.description?.length > 150 && "..."}
+                    <CardText
+                      tag={"p"}
+                      style={{
+                        minHeight: "100px",
+                        maxHeight: "100px",
+                        overflowY: "hidden",
+                      }}>
+                      {todo?.description?.slice(0, 200)}
+                      {todo?.description?.length > 100 && "..."}
                     </CardText>
                     {tags.map((tag) => {
                       if (todo?.tags?.includes(tag?.value)) {
@@ -146,14 +162,14 @@ const Card = () => {
           </StrapCard>
           <EditModal
             key={`edit-${todo.id}`}
-            modalState={modalState.edit}
+            modalState={modalState.edit === todo.id}
             toggleModal={() => toggleModal("edit", todo.id)}
             todoId={todo.id}
             deleteId={todo.id}
           />
           <ComplateModal
             key={`update-${todo.id}`}
-            modalState={modalState.complete}
+            modalState={modalState.complete === todo.id}
             toggleModal={() => toggleModal("complete", todo.id)}
             handleComplete={() => handleComplete()}
             todoId={todo.id}
@@ -161,7 +177,7 @@ const Card = () => {
 
           <DeleteModal
             key={`delete-${todo.id}`}
-            modalState={modalState.delete}
+            modalState={modalState.delete === todo.id}
             toggleModal={() => toggleModal("delete", todo.id)}
             handleDelete={() => handleDelete()}
             deleteId={todo.id}

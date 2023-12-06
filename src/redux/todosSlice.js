@@ -1,22 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../api/api";
 
-export const fetchTodos = createAsyncThunk(
-  "todos/fetchTodos",
-  async ({ searchTerm, isCompleted }) => {
-    const response = await api.get("/todos", {
-      params: {
-        is_completed: isCompleted,
-      },
-    });
-
-    const filteredTodos = response.data.filter((todo) =>
-      todo.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    return filteredTodos;
-  }
-);
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  const response = await api.get("/todos?_sort=created_at&_order=asc");
+  return response.data;
+});
 
 export const addTodo = createAsyncThunk("todos/addTodo", async (todo) => {
   const response = await api.post("/todos", todo);
