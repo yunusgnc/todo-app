@@ -259,3 +259,7 @@ a {
 .checked {
   background-color: #e6f7e1;
 }
+
+main.d-flex.justify-content-center.w-100.ml-5 {
+  margin-left: 15rem;
+}

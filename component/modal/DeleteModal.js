@@ -3,17 +3,14 @@ import React, { useState, useEffect } from "react";
 import { Button, Modal, ModalHeader, ModalFooter } from "reactstrap";
 import PropTypes from "prop-types";
 
-function DeleteModal({ modalState, toggleModal, handleDelete, ...props }) {
-  const { className, deleteId } = props; // new prop: deleteId
+function DeleteModal({
+  modalState,
+  toggleModal,
+  handleDelete,
+  deleteId,
+  ...props
+}) {
   const [backdrop, setBackdrop] = useState(true);
-
-  const changeBackdrop = (e) => {
-    let { value } = e.target;
-    if (value !== "static") {
-      value = JSON.parse(value);
-    }
-    setBackdrop(value);
-  };
 
   useEffect(() => {
     // Reset the backdrop state whenever the modal is opened
@@ -23,7 +20,7 @@ function DeleteModal({ modalState, toggleModal, handleDelete, ...props }) {
   return (
     <div>
       <Modal isOpen={modalState} toggle={toggleModal} backdrop={backdrop}>
-        <ModalHeader toggle={toggleModal}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggleModal}>Delete Todo</ModalHeader>
         <ModalFooter>
           <Button color='primary' onClick={() => handleDelete(deleteId)}>
             Delete

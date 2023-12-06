@@ -1,52 +1,31 @@
-import React, { useState } from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Input,
-  Label,
-  Form,
-  FormGroup,
-} from "reactstrap";
+// DeleteModal component
+import React, { useState, useEffect } from "react";
+import { Button, Modal, ModalHeader, ModalFooter } from "reactstrap";
 import PropTypes from "prop-types";
 
-function Example(props) {
-  const { className } = props;
-  const [modal, setModal] = useState(false);
+function ComplateModal({
+  modalState,
+  toggleModal,
+  handleComplete,
+  deleteId: todoId,
+  ...props
+}) {
   const [backdrop, setBackdrop] = useState(true);
-  const [keyboard, setKeyboard] = useState(true);
 
-  const toggle = () => setModal(!modal);
-
-  const changeBackdrop = (e) => {
-    let { value } = e.target;
-    if (value !== "static") {
-      value = JSON.parse(value);
-    }
-    setBackdrop(value);
-  };
+  useEffect(() => {
+    // Reset the backdrop state whenever the modal is opened
+    setBackdrop(true);
+  }, [modalState]);
 
   return (
     <div>
-      <Form inline onSubmit={(e) => e.preventDefault()}>
-        <Button color='danger' onClick={toggle}>
-          Click Me
-        </Button>
-      </Form>
-      <Modal
-        isOpen={modal}
-        toggle={toggle}
-        className={className}
-        backdrop={backdrop}
-        keyboard={keyboard}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+      <Modal isOpen={modalState} toggle={toggleModal} backdrop={backdrop}>
+        <ModalHeader toggle={toggleModal}>Complate Todo</ModalHeader>
         <ModalFooter>
-          <Button color='primary' onClick={toggle}>
-            Do Something
-          </Button>{" "}
-          <Button color='secondary' onClick={toggle}>
+          <Button color='primary' onClick={() => handleComplete(todoId)}>
+            Complate
+          </Button>
+          <Button color='secondary' onClick={toggleModal}>
             Cancel
           </Button>
         </ModalFooter>
@@ -55,8 +34,10 @@ function Example(props) {
   );
 }
 
-Example.propTypes = {
+ComplateModal.propTypes = {
   className: PropTypes.string,
+  handleComplete: PropTypes.func.isRequired,
+  todoId: PropTypes.number.isRequired,
 };
 
-export default Example;
+export default ComplateModal;

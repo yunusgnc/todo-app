@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { FaBars, FaTag, FaCaretDown, FaCaretUp, FaTasks } from "react-icons/fa";
 import Content from "../content/Content";
+import Link from "next/link";
 
 const SideBar = () => {
   const [activeLink, setActiveLink] = useState("All");
@@ -31,59 +32,59 @@ const SideBar = () => {
           }`}>
           <ul>
             <li>
-              <a
+              <Link
                 className={`s-sidebar__nav-link ${
                   activeLink === "All" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#0'
+                href='/'
                 onClick={() => handleLinkClick("All")}>
                 <FaTasks />
                 <em>All</em>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className={`s-sidebar__nav-link ${
                   activeLink === "Active" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#0'
+                href='#'
                 onClick={() => handleLinkClick("Active")}>
                 <FaCaretUp />
                 <em>Active</em>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className={`s-sidebar__nav-link ${
                   activeLink === "Done" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#0'
+                href='#'
                 onClick={() => handleLinkClick("Done")}>
                 <FaCaretDown />
                 <em>Done</em>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className={`s-sidebar__nav-link ${
                   activeLink === "Task" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#0'
+                href='/tags'
                 onClick={() => handleLinkClick("Task")}>
                 <FaTag />
                 <em>Tags</em>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className={`s-sidebar__nav-link ${
                   activeLink === "Trash" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#0'
+                href='#'
                 onClick={() => handleLinkClick("Trash")}>
                 <BsTrash />
                 <em>Trash</em>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

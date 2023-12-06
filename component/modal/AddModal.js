@@ -32,7 +32,6 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
 
   useEffect(() => {
     dispatch(fetchTags());
-    console.log(initialValues);
   }, [dispatch]);
 
   const validationSchema = Yup.object().shape({
@@ -52,7 +51,6 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
       }),
       is_completed: values.is_completed,
     };
-    console.log(todoData);
 
     dispatch(addTodo(todoData))
       .then((res) => {
@@ -115,7 +113,11 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
               isMulti
               value={formik.values.tags}
               name='colors'
-              options={tags}
+              options={tags.map((tag) => ({
+                value: tag.value,
+                label: tag.label,
+                key: tag.value,
+              }))}
               className='basic-multi-select'
               classNamePrefix='select'
               onChange={handleTagsChange}

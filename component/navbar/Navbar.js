@@ -1,13 +1,33 @@
-import React, { useState } from "react";
-import { BsSearch, BsPlus } from "react-icons/bs"; // react-icons kütüphanesinden arama ve artı simgeleri
+import React, { useEffect, useState } from "react";
+import { BsSearch, BsPlus } from "react-icons/bs";
 import AddModal from "../modal/AddModal";
+import { fetchTodos } from "@/redux/todosSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Navbar() {
   const [modal, setModal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const dispatch = useDispatch();
+  const todos = useSelector((state) => state.todos.data);
 
   const toggle = () => {
     setModal(!modal);
   };
+
+  useEffect(() => {
+    dispatch(fetchTodos(searchTerm))
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [searchTerm]);
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -47,6 +67,7 @@ export default function Navbar() {
                 type='search'
                 placeholder='Search'
                 aria-label='Search'
+                onChange={handleSearch}
               />
               <span className='position-absolute top-50 translate-middle-y end-0 pe-3'>
                 <BsSearch />

@@ -1,10 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../api/api";
 
-export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
-  const response = await api.get("/todos");
-  return response.data;
-});
+export const fetchTodos = createAsyncThunk(
+  "todos/fetchTodos",
+  async ({ searchTerm, isCompleted }) => {
+    const response = await api.get("/todos", {
+      params: {
+        is_completed: isCompleted,
+      },
+    });
+
+    const filteredTodos = response.data.filter((todo) =>
+      todo.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    return filteredTodos;
+  }
+);
 
 export const addTodo = createAsyncThunk("todos/addTodo", async (todo) => {
   const response = await api.post("/todos", todo);
@@ -17,7 +29,7 @@ export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
 });
 
 export const updateTodo = createAsyncThunk("todos/updateTodo", async (todo) => {
-  const response = await api.put(`/todos/${todo._id}`, todo);
+  const response = await api.patch(`/todos/${todo._id}`, todo);
   return response.data;
 });
 
