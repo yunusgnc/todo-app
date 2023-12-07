@@ -1,10 +1,23 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../api/api";
 
-export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
-  const response = await api.get("/todos?_sort=created_at&_order=asc");
-  return response.data;
-});
+export const fetchTodos = createAsyncThunk(
+  "todos/fetchTodos",
+  async (params) => {
+    const { is_deleted = false, ...otherParams } = params;
+
+    const response = await api.get("/todos", {
+      params: {
+        _sort: "created_at",
+        _order: "asc",
+        is_deleted,
+        ...otherParams,
+      },
+    });
+
+    return response.data;
+  }
+);
 
 export const addTodo = createAsyncThunk("todos/addTodo", async (todo) => {
   const response = await api.post("/todos", todo);
@@ -12,7 +25,7 @@ export const addTodo = createAsyncThunk("todos/addTodo", async (todo) => {
 });
 
 export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
-  await api.delete(`/todos/${id}`);
+  await api.patch(`/todos/${id}`, { is_delete: true });
   return id;
 });
 

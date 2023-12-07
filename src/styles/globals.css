@@ -83,6 +83,7 @@ a {
   height: 100%;
   background: #f8f9fa;
   color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
 }
 
 .s-sidebar__nav:hover,
@@ -262,4 +263,27 @@ a {
 
 main.d-flex.justify-content-center.w-100.ml-5 {
   margin-left: 15rem;
+}
+
+.d-none-mobile {
+  display: block;
+}
+
+/* Örneğin, 768 piksel ve daha küçük ekranlar için genişlik 100% */
+@media (max-width: 768px) {
+  .mobile-navbar {
+    width: 100% !important;
+  }
+
+  .mobile-btn {
+    width: 100% !important;
+  }
+  /* Örneğin, 768 piksel ve daha küçük ekranlar için .d-none-mobile'ı gizle */
+  .d-none-mobile {
+    display: none !important;
+  }
+}
+
+.col-lg-4.col-sm-12.mt-2 {
+  min-width: 450px;
 }

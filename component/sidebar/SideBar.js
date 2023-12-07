@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { FaBars, FaTag, FaCaretDown, FaCaretUp, FaTasks } from "react-icons/fa";
-import Content from "../content/Content";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTodos } from "@/redux/todosSlice";
+import { setActiveLink } from "@/redux/setLinkSlice";
 
 const SideBar = () => {
-  const [activeLink, setActiveLink] = useState("All");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const activeLink = useSelector((state) => state.setLink.activeLink);
+  const linkFilters = useSelector((state) => state.setLink.linkFilters);
+
+  const dispatch = useDispatch();
 
   const handleLinkClick = (link) => {
-    setActiveLink(link);
-    setSidebarOpen(false); // Linke tıklandığında, mobilde menüyü kapat
+    dispatch(setActiveLink(link));
+    dispatch(fetchTodos(linkFilters[link]));
+    setSidebarOpen(false);
   };
 
   const handleSidebarToggle = () => {
@@ -47,7 +53,7 @@ const SideBar = () => {
                 className={`s-sidebar__nav-link ${
                   activeLink === "Active" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#'
+                href='/'
                 onClick={() => handleLinkClick("Active")}>
                 <FaCaretUp />
                 <em>Active</em>
@@ -58,7 +64,7 @@ const SideBar = () => {
                 className={`s-sidebar__nav-link ${
                   activeLink === "Done" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#'
+                href='/'
                 onClick={() => handleLinkClick("Done")}>
                 <FaCaretDown />
                 <em>Done</em>
@@ -80,7 +86,7 @@ const SideBar = () => {
                 className={`s-sidebar__nav-link ${
                   activeLink === "Trash" ? "s-sidebar__nav-link-active" : ""
                 }`}
-                href='#'
+                href='/'
                 onClick={() => handleLinkClick("Trash")}>
                 <BsTrash />
                 <em>Trash</em>

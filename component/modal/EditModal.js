@@ -22,6 +22,8 @@ import { useDispatch, useSelector } from "react-redux";
 const EditModal = ({ modalState, toggleModal, todoId }) => {
   const dispatch = useDispatch();
   const tags = useSelector((state) => state.tags.data);
+  const activeLink = useSelector((state) => state.setLink.activeLink);
+  const linkFilters = useSelector((state) => state.setLink.linkFilters);
 
   const selectedTodo = useSelector((state) =>
     state.todos.data.find((todo) => todo.id === todoId)
@@ -61,7 +63,7 @@ const EditModal = ({ modalState, toggleModal, todoId }) => {
     dispatch(updateTodo({ _id: todoId, ...todoData }))
       .then((res) => {
         console.log(res);
-        dispatch(fetchTodos());
+        dispatch(fetchTodos(linkFilters[activeLink]));
         toast.success("Todo updated successfully");
       })
       .catch((err) => {

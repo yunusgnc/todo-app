@@ -22,6 +22,8 @@ import { useDispatch, useSelector } from "react-redux";
 const AddModal = ({ modal = false, toggle = () => {} }) => {
   const dispatch = useDispatch();
   const tags = useSelector((state) => state.tags.data);
+  const activeLink = useSelector((state) => state.setLink.activeLink);
+  const linkFilters = useSelector((state) => state.setLink.linkFilters);
 
   const initialValues = {
     title: "",
@@ -31,7 +33,7 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
   };
 
   useEffect(() => {
-    dispatch(fetchTags());
+    dispatch(fetchTags(linkFilters[activeLink]));
   }, [dispatch]);
 
   const validationSchema = Yup.object().shape({

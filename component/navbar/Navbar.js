@@ -30,14 +30,14 @@ export default function Navbar() {
                 TASKS
               </a>
             </div>
-            <div className='col-6'>
+            <div className='col-6 d-none-mobile'>
               <a
                 className='navbar-brand fs-6 d-flex justify-content-end border-end pe-3'
                 href='#'>
                 Home
               </a>
             </div>
-            <div className='col-6'>
+            <div className='col-6 d-none-mobile'>
               <a
                 className='navbar-brand fs-6 d-flex justify-content-start border-start ps-3'
                 href='#'>
@@ -47,10 +47,10 @@ export default function Navbar() {
           </div>
 
           <div
-            className='navbar-collapse justify-content-between flex-wrap'
+            className='navbar-collapse justify-content-between flex-wrap '
             id='navbarTogglerDemo01'>
             <form
-              className='d-flex position-relative  mb-2 mb-lg-0'
+              className='d-flex position-relative mb-2 mb-lg-0 mobile-navbar'
               style={{ height: "50px", width: "250px" }}>
               <input
                 className='form-control rounded-start '
@@ -64,7 +64,7 @@ export default function Navbar() {
               </span>
             </form>
             <button
-              className='btn btn-outline-primary  w-lg-auto p-2 border border-primary'
+              className='btn btn-outline-primary w-lg-auto p-2 border border-primary mobile-btn'
               onClick={toggle}
               style={{ height: "50px", width: "200px" }}
               data-bs-toggle='modal'

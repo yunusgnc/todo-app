@@ -20,6 +20,8 @@ import EditModal from "../modal/EditModal";
 
 const Card = () => {
   const [dropdownOpen, setDropdownOpen] = useState({});
+  const activeLink = useSelector((state) => state.setLink.activeLink);
+  const linkFilters = useSelector((state) => state.setLink.linkFilters);
   const dispatch = useDispatch();
   const [todoId, setTodoId] = useState(null);
   const todos = useSelector((state) => state.todos.data);
@@ -46,7 +48,7 @@ const Card = () => {
           delete: null,
         }));
         toast.success("Todo deleted successfully");
-        dispatch(fetchTodos());
+        dispatch(fetchTodos(linkFilters[activeLink]));
       })
       .catch((err) => {
         toast.error("Something went wrong");
@@ -61,7 +63,7 @@ const Card = () => {
           complete: null,
         }));
         toast.success("Todo completed successfully");
-        dispatch(fetchTodos());
+        dispatch(fetchTodos(linkFilters[activeLink]));
       })
       .catch((err) => {
         toast.error("Something went wrong");
@@ -69,8 +71,8 @@ const Card = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchTodos()).then((res) => {
-      console.log(res.payload);
+    dispatch(fetchTodos(linkFilters[activeLink])).then((res) => {
+      // console.log(res.payload);
     });
   }, [dispatch]);
 
@@ -82,9 +84,9 @@ const Card = () => {
   };
 
   return (
-    <div className='row'>
+    <div className='row '>
       {todos.map((todo) => (
-        <div key={todo.id} className='col-lg-4 col-sm-12 '>
+        <div key={todo.id} className='col-lg-4 col-sm-12 mt-2'>
           <StrapCard>
             <div className='row'>
               <div className='col-1'>

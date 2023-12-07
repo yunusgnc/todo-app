@@ -4,7 +4,7 @@ import TagsList from "../../../component/tags/TagsList";
 
 export default function index() {
   return (
-    <main className='d-flex justify-content-center w-100 ml-5'>
+    <main className='s-layout__content'>
       <Container>
         <TagsList />
       </Container>
