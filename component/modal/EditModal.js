@@ -57,6 +57,9 @@ const EditModal = ({ modalState, toggleModal, todoId }) => {
       description: values.description,
       tags: values.tags.map((tag) => tag.value),
       is_completed: values.is_completed,
+      created_at: new Date(),
+      updated_at: new Date(),
+      is_deleted: false,
     };
 
     // Güncelleme işlemini başlat

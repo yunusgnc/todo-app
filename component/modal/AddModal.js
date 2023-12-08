@@ -18,6 +18,7 @@ import { fetchTags } from "@/redux/tagsSlice";
 import { addTodo, fetchTodos } from "@/redux/todosSlice";
 
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const AddModal = ({ modal = false, toggle = () => {} }) => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
     title: "",
     description: "",
     is_completed: false,
+    is_deleted: false,
     tags: [],
   };
 
@@ -51,6 +53,7 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
       tags: values.tags.map((tag) => {
         return tag.value;
       }),
+      is_deleted: false,
       is_completed: values.is_completed,
       created_at: new Date(),
       updated_at: new Date(),
@@ -58,11 +61,12 @@ const AddModal = ({ modal = false, toggle = () => {} }) => {
 
     dispatch(addTodo(todoData))
       .then((res) => {
-        console.log(res);
-        dispatch(fetchTodos());
+        dispatch(fetchTodos(linkFilters[activeLink]));
+        toast.success("Todo added successfully");
       })
       .catch((err) => {
         console.log(err);
+        toast.error("Something went wrong");
       });
   };
 

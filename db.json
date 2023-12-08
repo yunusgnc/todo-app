@@ -9,8 +9,8 @@
       "description": "Tüm kaynaklar GitHub üzerinde tutulacaktır.",
       "is_completed": true,
       "is_deleted": true,
-      "created_at": "2023-12-05T08:15:00Z",
-      "updated_at": "2023-12-05T10:30:00Z"
+      "created_at": "2022-12-05T08:15:00Z",
+      "updated_at": "2022-12-05T10:30:00Z"
     },
     {
       "id": 2,
@@ -21,8 +21,8 @@
       "description": "Readme.md dosyasına uygulamanın çalıştırılması için gerekli tüm adımların yazılması gerekmektedir",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T09:30:00Z",
-      "updated_at": "2023-12-05T11:45:00Z"
+      "created_at": "2022-11-05T09:30:00Z",
+      "updated_at": "2022-11-05T11:45:00Z"
     },
     {
       "id": 3,
@@ -33,8 +33,8 @@
       "description": "firebase.google.com, fakestoreapi.com, dummyapi.io veya https://github.com/typicode/json-server vb. sahte endpoint oluşturucu kullanılabilir.",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T10:45:00Z",
-      "updated_at": "2023-12-05T13:00:00Z"
+      "created_at": "2022-10-05T10:45:00Z",
+      "updated_at": "2022-10-05T13:00:00Z"
     },
     {
       "id": 4,
@@ -45,8 +45,8 @@
       "description": "Todos objeleri oluşturulacak",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T14:15:00Z"
+      "created_at": "2022-09-05T12:00:00Z",
+      "updated_at": "2022-09-05T14:15:00Z"
     },
     {
       "id": 5,
@@ -57,8 +57,8 @@
       "description": "todos objesi içerisinde aşağıdaki alanlar olmalıdır. \n _id (ObjectId), title (String), description (String), is_completed (Boolean), created_at (Date), updated_at (Date)",
       "is_deleted": false,
       "is_completed": true,
-      "created_at": "2023-12-05T13:15:00Z",
-      "updated_at": "2023-12-05T15:30:00Z"
+      "created_at": "2022-08-05T13:15:00Z",
+      "updated_at": "2022-08-05T15:30:00Z"
     },
     {
       "id": 6,
@@ -69,8 +69,8 @@
       "description": "JSON / REST API ile endpoint'ler oluşturulacaktır",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T14:30:00Z",
-      "updated_at": "2023-12-05T16:45:00Z"
+      "created_at": "2022-07-05T14:30:00Z",
+      "updated_at": "2022-07-05T16:45:00Z"
     },
     {
       "id": 7,
@@ -81,8 +81,8 @@
       "description": "REST API üzerinde, GET methodu ile todos verileri çekilebilecek. (Front-End Gereksinimleri 7. madde için)",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T15:45:00Z",
-      "updated_at": "2023-12-05T18:00:00Z"
+      "created_at": "2022-06-05T15:45:00Z",
+      "updated_at": "2022-06-05T18:00:00Z"
     },
     {
       "id": 8,
@@ -93,8 +93,8 @@
       "description": "REST API üzerinde, POST methodu ile todos koleksiyonuna veri eklenebilecek. (Front-End Gereksinimleri 8. madde için)",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T17:00:00Z",
-      "updated_at": "2023-12-05T19:15:00Z"
+      "created_at": "2022-04-05T17:00:00Z",
+      "updated_at": "2022-04-05T19:15:00Z"
     },
     {
       "id": 9,
@@ -105,8 +105,8 @@
       "description": "REST API üzerinde, DELETE methodu ile todos koleksiyonundan veri silinebilecek. (Front-End Gereksinimleri 9. madde için)",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T18:15:00Z",
-      "updated_at": "2023-12-05T20:30:00Z"
+      "created_at": "2022-03-05T18:15:00Z",
+      "updated_at": "2022-03-05T20:30:00Z"
     },
     {
       "id": 10,
@@ -117,8 +117,8 @@
       "description": "REST API üzerinde, PUT methodu ile todos koleksiyonunda veri güncellenebilecek. (Front-End Gereksinimleri 10. madde için)",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T19:30:00Z",
-      "updated_at": "2023-12-05T21:45:00Z"
+      "created_at": "2022-02-05T19:30:00Z",
+      "updated_at": "2022-02-05T21:45:00Z"
     },
     {
       "id": 11,
@@ -129,8 +129,8 @@
       "description": "Tüm kaynaklar GitHub üzerinde tutulacaktır.",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z",
+      "created_at": "2022-01-05T12:00:00Z",
+      "updated_at": "2022-01-05T12:00:00Z",
       "_id": 11
     },
     {
@@ -142,8 +142,8 @@
       "description": "Readme.md dosyasına uygulamanın çalıştırılması için gerekli tüm adımların yazılması gerekmektedir",
       "is_completed": true,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z",
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z",
       "_id": 12
     },
     {
@@ -155,8 +155,8 @@
       "description": "React.js son versiyon kullanılarak geliştirme yapılacaktır",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z",
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z",
       "_id": 13
     },
     {
@@ -168,8 +168,8 @@
       "description": "React.js içerisinde Javascript dili ile kodlama yapılacaktır (TypeScript kullanılmayacak)",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
     },
     {
       "id": 15,
@@ -180,8 +180,8 @@
       "description": "Ekteki resim baz alınarak bir arayüz tasarımı oluşturulacaktır.",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
     },
     {
       "id": 16,
@@ -192,8 +192,8 @@
       "description": "Formlar için (Ekleme, Düzenleme vb formlar) 'Formik' kütüphanesi kullanılacaktır.",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
     },
     {
       "id": 17,
@@ -204,8 +204,8 @@
       "description": "Yapılacaklar listesi olan bir listeleme sayfası olmalı.",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
     },
     {
       "id": 18,
@@ -216,8 +216,8 @@
       "description": "Yeni 'Yapılacak' maddesi eklenebilecek bir arayüz olmalı.",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
     },
     {
       "id": 19,
@@ -228,8 +228,8 @@
       "description": "Listeden bir 'Yapılacak' maddesi silinebilmeli.",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
     },
     {
       "id": 20,
@@ -240,8 +240,8 @@
       "description": "Tamamlanan 'Yapılacak' maddesi, tamamlandı olarak güncellenmeli.",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
     },
     {
       "id": 21,
@@ -252,8 +252,103 @@
       "description": "Endpoint istekleri için 'Axios' kütüphanesi kullanılacaktır.",
       "is_completed": false,
       "is_deleted": false,
-      "created_at": "2023-12-05T12:00:00Z",
-      "updated_at": "2023-12-05T12:00:00Z"
+      "created_at": "2022-12-05T12:00:00Z",
+      "updated_at": "2022-12-05T12:00:00Z"
+    },
+    {
+      "title": "deneme",
+      "description": "deneme",
+      "tags": [
+        1,
+        2
+      ],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T10:59:42.396Z",
+      "updated_at": "2023-12-08T10:59:42.396Z",
+      "id": 22
+    },
+    {
+      "title": "deneme2",
+      "description": "denme2",
+      "tags": [],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T12:32:09.726Z",
+      "updated_at": "2023-12-08T12:32:09.726Z",
+      "id": 23,
+      "is_delete": true
+    },
+    {
+      "title": "deneme2",
+      "description": "deneme2",
+      "tags": [
+        2
+      ],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T12:32:25.531Z",
+      "updated_at": "2023-12-08T12:32:25.531Z",
+      "id": 24,
+      "is_delete": true
+    },
+    {
+      "title": "deneme",
+      "description": "deneme",
+      "tags": [],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T12:35:48.341Z",
+      "updated_at": "2023-12-08T12:35:48.341Z",
+      "id": 25
+    },
+    {
+      "title": "denem",
+      "description": "denem",
+      "tags": [
+        2
+      ],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T12:36:00.605Z",
+      "updated_at": "2023-12-08T12:36:00.605Z",
+      "id": 26
+    },
+    {
+      "title": "deneme",
+      "description": "deneme",
+      "tags": [
+        1
+      ],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T12:36:14.002Z",
+      "updated_at": "2023-12-08T12:36:14.002Z",
+      "id": 27
+    },
+    {
+      "title": "denem",
+      "description": "denem",
+      "tags": [
+        1
+      ],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T12:37:19.486Z",
+      "updated_at": "2023-12-08T12:37:19.486Z",
+      "id": 28
+    },
+    {
+      "title": "deneme",
+      "description": "denem",
+      "tags": [
+        1
+      ],
+      "is_deleted": true,
+      "is_completed": false,
+      "created_at": "2023-12-08T12:37:34.718Z",
+      "updated_at": "2023-12-08T12:37:34.718Z",
+      "id": 29
     }
   ],
   "tags": [

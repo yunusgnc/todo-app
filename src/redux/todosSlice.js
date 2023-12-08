@@ -9,7 +9,7 @@ export const fetchTodos = createAsyncThunk(
     const response = await api.get("/todos", {
       params: {
         _sort: "created_at",
-        _order: "asc",
+        _order: "desc",
         is_deleted,
         ...otherParams,
       },
@@ -25,7 +25,7 @@ export const addTodo = createAsyncThunk("todos/addTodo", async (todo) => {
 });
 
 export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
-  await api.patch(`/todos/${id}`, { is_delete: true });
+  await api.patch(`/todos/${id}`, { is_deleted: true });
   return id;
 });
 
